@@ -8,6 +8,7 @@ const ProductoSchema = new Schema({
     precioSistema: {type: Number, required: true},
     cantidad: {type: Number, required: true},
     tiempoElaboracion: {type: String, required: true},
+    
     costoManoDeObra: {type: Number, required: true},
     date: {type: Date, default: Date.now},
     user: {type: String, required: true}

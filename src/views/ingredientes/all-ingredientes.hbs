@@ -1,0 +1,30 @@
+<div class="row">
+    {{#each ingredientes}}
+    <div class="col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title d-flex justify-content-between align-items-center">
+                    {{nombre}} <a href="/ingredientes/edit/{{_id}}"><i class="fa fa-edit"></i></a>
+                </h4>
+                <p>{{descripcion}}</p>
+                <hr class="dropdown-divider">
+                <p>Precio: {{precio}} colones</p>
+                <p>Cantidad: {{cantidad}}  {{unidadMedida}}</p>
+                <p>Guardado: {{date}}</p>
+                <form action="/ingredientes/delete/{{_id}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button class="btn btn-danger btn-block btn-sm" style="width: 100%;" type="submit">Eliminar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{else}}
+        <div class="card mx-auto col-md-4 text-center">
+            <div class="card-body">
+                <p>Hola {{user.name}}</p>
+                <p class="lead">No se han agregado ingredientes al sistema</p>
+                <a href="/ingredientes/add" class="btn btn-success btn-block" style="width: 100%;">Agregar Uno!</a>
+            </div>
+        </div>
+    {{/each}}
+</div>
